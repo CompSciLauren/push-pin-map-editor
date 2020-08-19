@@ -19,8 +19,6 @@ function generateShapes() {
 }
 
 const INITIAL_STATE = generateShapes();
-let currentState = INITIAL_STATE;
-console.log(currentState);
 
 function App() {
   const [stars, setStars] = React.useState(INITIAL_STATE);
@@ -48,16 +46,19 @@ function App() {
   };
 
   const addStar = () => {
-    currentState.push({
-      id: currentState.length.toString(),
-      x: Math.random() * 200,
-      y: Math.random() * 200,
-      rotation: Math.random() * 180,
-      isDragging: false,
-    });
+    const updatedState = [
+      ...stars,
+      {
+        id: stars.length.toString(),
+        x: Math.random() * 200,
+        y: Math.random() * 200,
+        rotation: Math.random() * 180,
+        isDragging: false,
+      },
+    ];
 
-    setStars(currentState);
-    console.log(currentState);
+    setStars(updatedState);
+    console.log(updatedState);
   };
 
   return (
