@@ -1,9 +1,12 @@
 import React from "react";
 import { Stage, Layer, Star, Image, Rect, Text } from "react-konva";
+import useImage from "use-image";
 import "./App.css";
 
-const image = new window.Image();
-image.src = process.env.PUBLIC_URL + "/large-detailed-map-of-overland-park.jpg";
+const MapOfOverlandPark = () => {
+  const [image] = useImage("/large-detailed-map-of-overland-park.jpg");
+  return <Image image={image} />;
+};
 
 function generateShapes() {
   return [...Array(5)].map((_, i) => ({
@@ -60,7 +63,7 @@ function App() {
   return (
     <Stage width={3409} height={4699}>
       <Layer>
-        <Image image={image} />
+        <MapOfOverlandPark />
         {stars.map((star) => (
           <Star
             key={star.id}
