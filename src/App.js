@@ -1,6 +1,5 @@
 import React from "react";
-import { Stage, Layer, Star, Text, Image } from "react-konva";
-import MapOfOverlandPark from "./images/large-detailed-map-of-overland-park.jpg";
+import { Stage, Layer, Star, Image } from "react-konva";
 import "./App.css";
 
 function generateShapes() {
