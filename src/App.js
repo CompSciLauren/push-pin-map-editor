@@ -73,6 +73,12 @@ function App() {
     setStars(updatedState);
   };
 
+  const clearStars = () => {
+    const updatedState = [];
+
+    setStars(updatedState);
+  };
+
   return (
     <Stage width={3409} height={4699}>
       <Layer>
@@ -123,6 +129,14 @@ function App() {
             fontSize={16}
             fill="white"
             onclick={addStar}
+          />
+          <Text
+            text="Clear all stars"
+            x={12}
+            y={260}
+            fontSize={16}
+            fill="white"
+            onclick={clearStars}
           />
           <Text
             text="Hide menu"
