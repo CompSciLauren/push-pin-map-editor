@@ -8,6 +8,18 @@ const MapOfOverlandPark = () => {
   return <Image image={image} />;
 };
 
+function logIssue() {
+  window.open(
+    "https://github.com/CompSciLauren/push-pin-map-editor/issues/new?assignees=&labels=bug&template=bug_report.md&title="
+  );
+}
+
+function requestFeature() {
+  window.open(
+    "https://github.com/CompSciLauren/push-pin-map-editor/issues/new?assignees=&labels=enhancement&template=feature_request.md&title="
+  );
+}
+
 function generateShapes() {
   return [...Array(5)].map((_, i) => ({
     id: i.toString(),
@@ -107,6 +119,22 @@ function App() {
           fontSize={16}
           fill="white"
           onclick={addStar}
+        />
+        <Text
+          text="Log an issue"
+          x={12}
+          y={260}
+          fontSize={16}
+          fill="white"
+          onclick={() => logIssue()}
+        />
+        <Text
+          text="Request a feature"
+          x={12}
+          y={300}
+          fontSize={16}
+          fill="white"
+          onclick={() => requestFeature()}
         />
       </Layer>
     </Stage>
