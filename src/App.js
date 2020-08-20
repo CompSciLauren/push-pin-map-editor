@@ -127,7 +127,7 @@ function App() {
           <Text
             text="Hide menu"
             x={12}
-            y={260}
+            y={480}
             fontSize={16}
             fill="white"
             onclick={() => {
@@ -140,7 +140,7 @@ function App() {
           <Text
             text="Log an issue"
             x={12}
-            y={300}
+            y={520}
             fontSize={16}
             fill="white"
             onclick={() => logIssue()}
@@ -148,7 +148,7 @@ function App() {
           <Text
             text="Request a feature"
             x={12}
-            y={340}
+            y={560}
             fontSize={16}
             fill="white"
             onclick={() => requestFeature()}
