@@ -34,6 +34,7 @@ const INITIAL_STATE = generateShapes();
 
 function App() {
   const [stars, setStars] = React.useState(INITIAL_STATE);
+  const [menuVisibility, setMenuVisibility] = React.useState(true);
 
   const handleDragStart = (e) => {
     const id = e.target.id();
@@ -70,7 +71,6 @@ function App() {
     ];
 
     setStars(updatedState);
-    console.log(updatedState);
   };
 
   return (
@@ -103,6 +103,7 @@ function App() {
         ))}
         <Group
           draggable
+          visible={menuVisibility}
           onDragStart={handleDragStart}
           onDragEnd={handleDragEnd}
         >
@@ -124,9 +125,22 @@ function App() {
             onclick={addStar}
           />
           <Text
-            text="Log an issue"
+            text="Hide menu"
             x={12}
             y={260}
+            fontSize={16}
+            fill="white"
+            onclick={() => {
+              setMenuVisibility(false);
+              alert(
+                "Menu hidden. This is typically done so you can save the image without the menu being visible. To save the image, right-click it and select 'Save Image As...'. You'll have to refresh the page to see the menu again. Make sure your image is saved before refreshing the page because it will be reset when you refresh it."
+              );
+            }}
+          />
+          <Text
+            text="Log an issue"
+            x={12}
+            y={300}
             fontSize={16}
             fill="white"
             onclick={() => logIssue()}
@@ -134,7 +148,7 @@ function App() {
           <Text
             text="Request a feature"
             x={12}
-            y={300}
+            y={340}
             fontSize={16}
             fill="white"
             onclick={() => requestFeature()}
