@@ -1,5 +1,5 @@
 import React from "react";
-import { Stage, Layer, Star, Image, Rect, Text } from "react-konva";
+import { Stage, Layer, Group, Star, Image, Rect, Text } from "react-konva";
 import useImage from "use-image";
 import "./App.css";
 
@@ -101,41 +101,45 @@ function App() {
             onDragEnd={handleDragEnd}
           />
         ))}
-      </Layer>
-      <Layer draggable onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-        <Rect
-          x={0}
-          y={200}
-          width={180}
-          height={400}
-          fill="gray"
-          opacity={0.7}
-          shadowBlur={10}
-        ></Rect>
-        <Text
-          text="Add star"
-          x={12}
-          y={220}
-          fontSize={16}
-          fill="white"
-          onclick={addStar}
-        />
-        <Text
-          text="Log an issue"
-          x={12}
-          y={260}
-          fontSize={16}
-          fill="white"
-          onclick={() => logIssue()}
-        />
-        <Text
-          text="Request a feature"
-          x={12}
-          y={300}
-          fontSize={16}
-          fill="white"
-          onclick={() => requestFeature()}
-        />
+        <Group
+          draggable
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
+        >
+          <Rect
+            x={0}
+            y={200}
+            width={180}
+            height={400}
+            fill="gray"
+            opacity={0.7}
+            shadowBlur={10}
+          ></Rect>
+          <Text
+            text="Add star"
+            x={12}
+            y={220}
+            fontSize={16}
+            fill="white"
+            onclick={addStar}
+          />
+          <Text
+            text="Log an issue"
+            x={12}
+            y={260}
+            fontSize={16}
+            fill="white"
+            onclick={() => logIssue()}
+          />
+          <Text
+            text="Request a feature"
+            x={12}
+            y={300}
+            fontSize={16}
+            fill="white"
+            onclick={() => requestFeature()}
+          />
+        </Group>
       </Layer>
     </Stage>
   );
